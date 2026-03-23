@@ -26,15 +26,16 @@ export function Navbar() {
 
   return (
     <>
-      <nav
-        className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-          scrolled
-            ? "bg-black/60 border-b border-white/[0.06] backdrop-blur-nav"
-            : "bg-transparent"
-        )}
-      >
-        <div className="max-w-[1440px] mx-auto px-8 flex items-center justify-between h-20">
+      <div className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 pt-4">
+        <nav
+          className={cn(
+            "max-w-[1440px] mx-auto transition-all duration-500 rounded-2xl",
+            scrolled
+              ? "bg-black/60 border border-white/[0.06] backdrop-blur-nav"
+              : "bg-transparent"
+          )}
+        >
+          <div className="px-6 flex items-center justify-between h-16">
           {/* Left nav links */}
           <div className="hidden md:flex items-center gap-10">
             {links.map((link) => (
@@ -106,8 +107,9 @@ export function Navbar() {
           >
             <Menu className="w-6 h-6" />
           </button>
-        </div>
-      </nav>
+          </div>
+        </nav>
+      </div>
 
       {/* Mobile menu */}
       {mobileOpen && (
