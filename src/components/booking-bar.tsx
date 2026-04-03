@@ -8,6 +8,7 @@ import {
   useLayoutEffect,
   type ReactNode,
 } from "react";
+import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 import { MapPin, Calendar, Clock, ChevronDown, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -62,7 +63,7 @@ function formatDate(dateStr: string) {
 const VIEWPORT_PADDING = 8; // px from viewport edge
 const DROPDOWN_GAP = 8; // gap between trigger and dropdown
 
-/* ── FieldWrapper: per-field viewport collision detection ── */
+/* ── FieldWrapper: portal-based dropdown so backdrop-filter works on mobile ── */
 function FieldWrapper({
   children,
   dropdown,
@@ -73,9 +74,12 @@ function FieldWrapper({
   isOpen: boolean;
 }) {
   const triggerRef = useRef<HTMLDivElement>(null);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [pos, setPos] = useState({ top: 0, left: 0, width: 0 });
   const [placement, setPlacement] = useState<"below" | "above">("below");
   const [maxH, setMaxH] = useState<number>(280);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   const computePlacement = useCallback(() => {
     if (!triggerRef.current) return;
@@ -86,20 +90,25 @@ function FieldWrapper({
     const spaceBelow = vh - rect.bottom - VIEWPORT_PADDING - DROPDOWN_GAP;
     const spaceAbove = rect.top - VIEWPORT_PADDING - DROPDOWN_GAP;
 
-    // Prefer below, but flip above if not enough room below and more room above
+    const newLeft = rect.left;
+    const newWidth = rect.width;
+
     if (spaceBelow >= 200) {
       setPlacement("below");
       setMaxH(Math.min(340, spaceBelow));
+      setPos({ top: rect.bottom + DROPDOWN_GAP, left: newLeft, width: newWidth });
     } else if (spaceAbove > spaceBelow) {
       setPlacement("above");
-      setMaxH(Math.min(340, spaceAbove));
+      const h = Math.min(340, spaceAbove);
+      setMaxH(h);
+      setPos({ top: rect.top - DROPDOWN_GAP - h, left: newLeft, width: newWidth });
     } else {
       setPlacement("below");
       setMaxH(Math.min(340, spaceBelow));
+      setPos({ top: rect.bottom + DROPDOWN_GAP, left: newLeft, width: newWidth });
     }
   }, []);
 
-  // Compute on open and on scroll/resize
   useLayoutEffect(() => {
     if (!isOpen) return;
     computePlacement();
@@ -119,19 +128,26 @@ function FieldWrapper({
   return (
     <div className="relative flex-1" ref={triggerRef}>
       {children}
-      {isOpen && (
-        <div
-          ref={dropdownRef}
-          className={`absolute left-0 right-0 md:w-[320px] ${
-            placement === "above" ? "bottom-full mb-2" : "top-full mt-2"
-          } rounded-xl z-[60] shadow-2xl shadow-black/60 border border-white/10 glass-dropdown-solid overflow-hidden`}
-          style={{ maxHeight: maxH }}
-        >
-          <div className="flex flex-col" style={{ maxHeight: maxH }}>
-            {dropdown}
-          </div>
-        </div>
-      )}
+      {isOpen &&
+        mounted &&
+        createPortal(
+          <div
+            className="fixed rounded-xl z-[60] shadow-2xl shadow-black/60 border border-white/10 glass-dropdown-solid overflow-hidden"
+            style={{
+              top: pos.top,
+              left: pos.left,
+              width: typeof window !== "undefined" && window.innerWidth < 768
+                ? pos.width
+                : 320,
+              maxHeight: maxH,
+            }}
+          >
+            <div className="flex flex-col" style={{ maxHeight: maxH }}>
+              {dropdown}
+            </div>
+          </div>,
+          document.body,
+        )}
     </div>
   );
 }

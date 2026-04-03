@@ -23,7 +23,7 @@ export default function HomePage() {
   return (
     <>
       {/* ━━━ HERO — Full viewport cinematic ━━━ */}
-      <section className="relative h-screen flex flex-col overflow-x-hidden">
+      <section className="relative h-screen flex flex-col overflow-x-clip">
         {/* Background — auto-cycling hero images */}
         <div className="absolute inset-0">
           <HeroSlider />
