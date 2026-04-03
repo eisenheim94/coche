@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Clock, Fuel, Users } from "lucide-react";
+import { ArrowUpRight, Cog, Fuel, Users } from "lucide-react";
 import type { Car } from "@/data/cars";
 
 export function CarCard({ car }: { car: Car }) {
@@ -10,19 +10,20 @@ export function CarCard({ car }: { car: Car }) {
         {/* Image */}
         <div className="relative aspect-[16/10] overflow-hidden">
           <Image
-            src={car.image}
+            src={car.cardImage}
             alt={car.name}
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-105"
+            style={{ objectPosition: "50% 70%" }}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
           {/* Category tag */}
           <div className="absolute top-4 left-4">
-            <span className="glass text-[11px] font-medium tracking-wider uppercase text-white/80 px-3 py-1.5 rounded-full">
+            <div className="glass inline-block text-[11px] font-medium tracking-wider uppercase text-white/80 px-3 py-1.5 rounded-full">
               {car.category}
-            </span>
+            </div>
           </div>
 
           {/* Arrow */}
@@ -38,11 +39,11 @@ export function CarCard({ car }: { car: Car }) {
             <div className="flex items-center gap-4 mt-2">
               <span className="flex items-center gap-1.5 text-[12px] text-white/50">
                 <Fuel className="w-3 h-3" />
-                {car.specs.hp}
+                {car.specs.consumption}
               </span>
               <span className="flex items-center gap-1.5 text-[12px] text-white/50">
-                <Clock className="w-3 h-3" />
-                {car.specs.acceleration}
+                <Cog className="w-3 h-3" />
+                {car.specs.transmission}
               </span>
               <span className="flex items-center gap-1.5 text-[12px] text-white/50">
                 <Users className="w-3 h-3" />

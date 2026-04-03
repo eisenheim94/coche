@@ -5,15 +5,15 @@ import {
   ArrowRight,
   CheckCircle2,
   ChevronRight,
-  Clock,
+  Cog,
   Fuel,
-  Gauge,
   Users,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { CarCard } from "@/components/car-card";
+import { GalleryCarousel } from "@/components/gallery-carousel";
 import { cars } from "@/data/cars";
 
 export function generateStaticParams() {
@@ -29,8 +29,8 @@ export default function CarDetailPage({ params }: { params: { id: string } }) {
     .slice(0, 3);
 
   const specs = [
-    { icon: Gauge, label: "Power", value: car.specs.hp },
-    { icon: Clock, label: "0-60 mph", value: car.specs.acceleration },
+    { icon: Fuel, label: "Consumption", value: car.specs.consumption },
+    { icon: Cog, label: "Transmission", value: car.specs.transmission },
     { icon: Users, label: "Seats", value: String(car.specs.seats) },
     { icon: Fuel, label: "Fuel", value: car.specs.fuel },
   ];
@@ -165,6 +165,19 @@ export default function CarDetailPage({ params }: { params: { id: string } }) {
               </div>
             </div>
           </div>
+
+          {/* Photo Gallery Carousel */}
+          {car.galleryImages.length > 0 && (
+            <div className="mt-24">
+              <p className="text-[13px] uppercase tracking-[0.2em] text-white/40 mb-3">
+                Gallery
+              </p>
+              <h2 className="font-display italic font-light text-3xl tracking-tight mb-8">
+                Photo Collection
+              </h2>
+              <GalleryCarousel images={car.galleryImages} alt={car.name} />
+            </div>
+          )}
 
           {/* Similar */}
           {similar.length > 0 && (

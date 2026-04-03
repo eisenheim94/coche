@@ -16,7 +16,7 @@ export default function ContactPage() {
       <section className="relative h-[45vh] min-h-[360px] flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=1920&q=80"
+            src="/images/hero-4.jpg"
             alt="Contact"
             fill
             className="object-cover"

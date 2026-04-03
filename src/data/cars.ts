@@ -1,13 +1,15 @@
 export interface Car {
   id: number;
   name: string;
-  category: "Sports" | "Electric" | "SUV" | "Sedan";
+  category: "Sports" | "Luxury" | "SUV" | "Classic";
   year: number;
   price: number;
   image: string;
+  cardImage: string;
+  galleryImages: string[];
   specs: {
-    hp: string;
-    acceleration: string;
+    consumption: string;
+    transmission: string;
     seats: number;
     fuel: string;
   };
@@ -18,148 +20,148 @@ export interface Car {
 export const cars: Car[] = [
   {
     id: 1,
-    name: "Mercedes-AMG GT",
-    category: "Sports",
-    year: 2025,
-    price: 289,
-    image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&q=80",
-    specs: { hp: "577 HP", acceleration: "3.1s", seats: 2, fuel: "Premium" },
+    name: "BMW E36 Cabrio",
+    category: "Classic",
+    year: 1998,
+    price: 89,
+    image: "/images/E36/hero.jpg",
+    cardImage: "/images/E36/1.jpg",
+    galleryImages: [
+      "/images/E36/1.jpg",
+      "/images/E36/2.jpg",
+      "/images/E36/3.jpg",
+    ],
+    specs: { consumption: "10.5 L", transmission: "AT", seats: 4, fuel: "Petrol" },
     featured: true,
     description:
-      "The AMG GT delivers breathtaking performance with its handcrafted biturbo V8 engine. Every curve speaks to aerodynamic excellence, while the interior wraps you in premium comfort.",
+      "The BMW E36 Convertible is a timeless open-top classic from the golden era of BMW. With its naturally aspirated inline-six, smooth power delivery, and perfectly balanced chassis, the E36 Cabrio offers a pure driving experience that modern cars struggle to replicate. Drop the top, feel the wind, and enjoy motoring the way it was meant to be.",
   },
   {
     id: 2,
-    name: "BMW i7 xDrive",
-    category: "Electric",
-    year: 2025,
-    price: 199,
-    image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80",
-    specs: { hp: "536 HP", acceleration: "4.5s", seats: 5, fuel: "Electric" },
+    name: "Mercedes-Benz ML 350",
+    category: "SUV",
+    year: 2009,
+    price: 109,
+    image: "/images/ML/hero.jpg",
+    cardImage: "/images/ML/1.jpg",
+    galleryImages: [
+      "/images/ML/1.jpg",
+      "/images/ML/2.jpg",
+      "/images/ML/3.jpg",
+    ],
+    specs: { consumption: "12.0 L", transmission: "AT", seats: 5, fuel: "Petrol" },
     featured: true,
     description:
-      "The BMW i7 redefines electric luxury. Whisper-quiet performance meets cutting-edge technology in a cabin that rivals the finest lounges.",
+      "The Mercedes-Benz ML 350 blends refined luxury with genuine off-road capability. Its silky-smooth V6 engine delivers effortless power, while the air suspension smooths out any road surface. Inside, you'll find the build quality and comfort that Mercedes is famous for — premium leather, solid switchgear, and a cabin that feels built to last forever.",
   },
   {
     id: 3,
-    name: "Range Rover Sport",
-    category: "SUV",
-    year: 2025,
-    price: 179,
-    image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&q=80",
-    specs: { hp: "395 HP", acceleration: "5.2s", seats: 5, fuel: "Premium" },
+    name: "Honda Integra DC2",
+    category: "Sports",
+    year: 1997,
+    price: 129,
+    image: "/images/DC2/hero.jpg",
+    cardImage: "/images/DC2/1.jpg",
+    galleryImages: [
+      "/images/DC2/1.jpg",
+      "/images/DC2/2.jpg",
+    ],
+    specs: { consumption: "8.5 L", transmission: "MT", seats: 4, fuel: "Petrol" },
     featured: true,
     description:
-      "Commanding presence meets refined luxury. The Range Rover Sport conquers any terrain while keeping you in absolute comfort.",
+      "The Honda Integra DC2 is widely regarded as one of the greatest front-wheel-drive cars ever made. Its legendary B18C VTEC engine screams to a stratospheric redline, rewarding drivers who push it to the limit. Razor-sharp handling, a perfectly weighted steering rack, and Honda's bulletproof reliability make the DC2 a true driver's car in every sense.",
   },
   {
     id: 4,
-    name: "Porsche 911 Turbo S",
+    name: "Honda CR-Z",
     category: "Sports",
-    year: 2025,
-    price: 349,
-    image: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=800&q=80",
-    specs: { hp: "640 HP", acceleration: "2.6s", seats: 2, fuel: "Premium" },
+    year: 2012,
+    price: 69,
+    image: "/images/CRZ/hero.jpg",
+    cardImage: "/images/CRZ/1.jpg",
+    galleryImages: [
+      "/images/CRZ/1.jpg",
+      "/images/CRZ/2.jpg",
+      "/images/CRZ/3.jpg",
+    ],
+    specs: { consumption: "5.5 L", transmission: "MT", seats: 2, fuel: "Hybrid" },
     featured: true,
     description:
-      "The 911 Turbo S is the pinnacle of Porsche engineering. Explosive acceleration and razor-sharp handling define this legendary sports car.",
+      "The Honda CR-Z is the spiritual successor to the beloved CRX — a compact, lightweight sports hybrid that proves eco-friendly driving doesn't have to be boring. With its 6-speed manual gearbox, peppy hybrid powertrain, and go-kart-like handling, the CR-Z delivers genuine fun while sipping fuel. Its futuristic design still turns heads today.",
   },
   {
     id: 5,
-    name: "Tesla Model S Plaid",
-    category: "Electric",
-    year: 2025,
-    price: 169,
-    image: "https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=800&q=80",
-    specs: { hp: "1,020 HP", acceleration: "1.9s", seats: 5, fuel: "Electric" },
+    name: "Honda Accord CB4",
+    category: "Classic",
+    year: 1992,
+    price: 59,
+    image: "/images/CB4/hero.jpg",
+    cardImage: "/images/CB4/1.jpg",
+    galleryImages: [
+      "/images/CB4/1.jpg",
+      "/images/CB4/2.jpg",
+      "/images/CB4/3.jpg",
+    ],
+    specs: { consumption: "9.0 L", transmission: "MT", seats: 5, fuel: "Petrol" },
     featured: false,
     description:
-      "The fastest production sedan ever made. Three motors deliver mind-bending acceleration while autonomous technology keeps you safe.",
+      "The fourth-generation Honda Accord CB4 represents everything that made Honda great in the early '90s — impeccable build quality, bulletproof reliability, and a driving experience that punches well above its class. The smooth-revving engine, light controls, and comfortable interior make it a joy for daily driving or weekend getaways alike.",
   },
   {
     id: 6,
-    name: "Audi RS e-tron GT",
-    category: "Electric",
-    year: 2025,
-    price: 229,
-    image: "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=800&q=80",
-    specs: { hp: "637 HP", acceleration: "3.1s", seats: 4, fuel: "Electric" },
+    name: "Rolls-Royce Silver Spirit III",
+    category: "Luxury",
+    year: 1995,
+    price: 199,
+    image: "/images/RR/hero.jpg",
+    cardImage: "/images/RR/1.jpg",
+    galleryImages: [
+      "/images/RR/1.jpg",
+      "/images/RR/2.jpg",
+      "/images/RR/3.jpg",
+      "/images/RR/4.jpg",
+    ],
+    specs: { consumption: "16.5 L", transmission: "AT", seats: 5, fuel: "Petrol" },
     featured: true,
     description:
-      "German precision meets electric excellence. The RS e-tron GT delivers supercar performance with zero emissions and breathtaking design.",
+      "The Rolls-Royce Silver Spirit III is the embodiment of old-world luxury and craftsmanship. Hand-built at the Crewe factory, every surface is finished in the finest Connolly leather and burr walnut veneers. The 6.75-litre V8 wafts you along in near-silence, while the ride quality sets a standard that few modern cars can match. This is motoring royalty.",
   },
   {
     id: 7,
-    name: "Mercedes S-Class",
-    category: "Sedan",
-    year: 2025,
-    price: 159,
-    image: "https://images.unsplash.com/photo-1563720223185-11003d516935?w=800&q=80",
-    specs: { hp: "429 HP", acceleration: "4.8s", seats: 5, fuel: "Premium" },
-    featured: false,
+    name: "Bentley Continental GTC",
+    category: "Luxury",
+    year: 2011,
+    price: 299,
+    image: "/images/Bentley/1.jpg",
+    cardImage: "/images/Bentley/2.jpg",
+    galleryImages: [
+      "/images/Bentley/2.jpg",
+      "/images/Bentley/3.jpg",
+    ],
+    specs: { consumption: "15.0 L", transmission: "AT", seats: 4, fuel: "Petrol" },
+    featured: true,
     description:
-      "The benchmark of luxury sedans. The S-Class offers an unparalleled combination of comfort, technology, and prestige.",
+      "The Bentley Continental GTC is a grand touring convertible that combines breathtaking performance with uncompromising luxury. Its twin-turbocharged W12 engine delivers effortless, surging power, while the handcrafted interior cocoons you in the finest leather and polished wood. Drop the roof and cruise — this is what automotive opulence feels like.",
   },
   {
     id: 8,
-    name: "Lamborghini Huracán",
+    name: "Ford Mustang GT",
     category: "Sports",
-    year: 2025,
-    price: 499,
-    image: "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&q=80",
-    specs: { hp: "631 HP", acceleration: "2.9s", seats: 2, fuel: "Premium" },
-    featured: true,
-    description:
-      "Italian artistry meets raw power. The Huracán's naturally aspirated V10 delivers a symphony of speed and style.",
-  },
-  {
-    id: 9,
-    name: "BMW X7 M60i",
-    category: "SUV",
-    year: 2025,
-    price: 189,
-    image: "https://images.unsplash.com/photo-1669691101147-791e49453ab7?w=800&q=80",
-    specs: { hp: "523 HP", acceleration: "4.5s", seats: 7, fuel: "Premium" },
-    featured: false,
-    description:
-      "Ultimate luxury meets commanding space. The X7 offers three rows of premium seating with unmistakable BMW performance.",
-  },
-  {
-    id: 10,
-    name: "Audi A8 L",
-    category: "Sedan",
-    year: 2025,
+    year: 2019,
     price: 149,
-    image: "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?w=800&q=80",
-    specs: { hp: "453 HP", acceleration: "4.5s", seats: 5, fuel: "Premium" },
+    image: "/images/Mustang/hero.jpg",
+    cardImage: "/images/Mustang/1.jpg",
+    galleryImages: [
+      "/images/Mustang/1.jpg",
+      "/images/Mustang/2.jpg",
+      "/images/Mustang/3.jpg",
+      "/images/Mustang/4.jpg",
+    ],
+    specs: { consumption: "13.5 L", transmission: "AT", seats: 4, fuel: "Petrol" },
     featured: false,
     description:
-      "Progressive luxury redefined. The long-wheelbase A8 offers exceptional rear-seat comfort with advanced technology.",
-  },
-  {
-    id: 11,
-    name: "Cadillac Escalade V",
-    category: "SUV",
-    year: 2025,
-    price: 219,
-    image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80",
-    specs: { hp: "682 HP", acceleration: "4.3s", seats: 7, fuel: "Premium" },
-    featured: false,
-    description:
-      "American luxury at its boldest. The Escalade V pairs a supercharged V8 with uncompromising comfort and presence.",
-  },
-  {
-    id: 12,
-    name: "Porsche Taycan Turbo",
-    category: "Electric",
-    year: 2025,
-    price: 259,
-    image: "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=800&q=80",
-    specs: { hp: "670 HP", acceleration: "2.8s", seats: 4, fuel: "Electric" },
-    featured: false,
-    description:
-      "The Taycan Turbo proves that electric doesn't mean compromise. Pure Porsche DNA in every acceleration and every corner.",
+      "The Ford Mustang GT is an American icon — raw, visceral, and unapologetically powerful. Its naturally aspirated 5.0-litre V8 delivers a thunderous soundtrack and exhilarating straight-line speed. With its aggressive stance, muscular design, and that unmistakable exhaust note, the Mustang GT is a car that makes every drive feel like an event.",
   },
 ];
 
-export const categories = ["All", "Sports", "Electric", "SUV", "Sedan"] as const;
+export const categories = ["All", "Sports", "Luxury", "SUV", "Classic"] as const;

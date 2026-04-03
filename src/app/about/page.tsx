@@ -11,7 +11,7 @@ export default function AboutPage() {
       <section className="relative h-[55vh] min-h-[400px] flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1920&q=80"
+            src="/images/hero-2.jpg"
             alt="Luxury car showroom"
             fill
             className="object-cover"
@@ -35,7 +35,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1000&q=80"
+                src="/images/hero-3.jpg"
                 alt="Luxury car"
                 fill
                 className="object-cover"
@@ -146,7 +146,7 @@ export default function AboutPage() {
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=1920&q=80"
+            src="/images/hero-1.jpg"
             alt="Car collection"
             fill
             className="object-cover"

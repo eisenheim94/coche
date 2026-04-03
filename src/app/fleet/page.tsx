@@ -12,7 +12,7 @@ export default function FleetPage() {
   const [category, setCategory] = useState("All");
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState("featured");
-  const [maxPrice, setMaxPrice] = useState(500);
+  const [maxPrice, setMaxPrice] = useState(300);
 
   const filtered = useMemo(() => {
     let result = [...cars];
@@ -35,7 +35,7 @@ export default function FleetPage() {
       <section className="relative h-[45vh] min-h-[360px] flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=1920&q=80"
+            src="/images/hero-4.jpg"
             alt="Fleet collection"
             fill
             className="object-cover"
@@ -54,8 +54,8 @@ export default function FleetPage() {
       </section>
 
       {/* Filters */}
-      <section className="sticky top-20 z-40 bg-background/80 backdrop-blur-nav border-b border-white/[0.06]">
-        <div className="max-w-[1440px] mx-auto px-8 py-5">
+      <section className="md:sticky md:top-20 z-40 px-4 sm:px-6 lg:px-8 py-3">
+        <div className="max-w-[1440px] mx-auto px-8 py-5 bg-background/80 backdrop-blur-nav border border-white/[0.06] rounded-2xl">
           <div className="flex items-center justify-between gap-6 flex-wrap">
             <div className="flex gap-2 overflow-x-auto">
               {categories.map((cat) => (
@@ -101,8 +101,8 @@ export default function FleetPage() {
             <span className="text-xs text-white/30">Budget:</span>
             <input
               type="range"
-              min={100}
-              max={500}
+              min={50}
+              max={300}
               value={maxPrice}
               onChange={(e) => setMaxPrice(Number(e.target.value))}
               className="flex-1 max-w-xs h-1 rounded-full appearance-none bg-white/10 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-background"

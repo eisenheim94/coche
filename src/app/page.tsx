@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CarCard } from "@/components/car-card";
 import { BookingBar } from "@/components/booking-bar";
+import { HeroSlider } from "@/components/hero-slider";
 import { cars } from "@/data/cars";
 
 export default function HomePage() {
@@ -22,16 +23,10 @@ export default function HomePage() {
   return (
     <>
       {/* ━━━ HERO — Full viewport cinematic ━━━ */}
-      <section className="relative h-screen flex flex-col overflow-hidden">
-        {/* Background */}
+      <section className="relative h-screen flex flex-col overflow-x-hidden">
+        {/* Background — auto-cycling hero images */}
         <div className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=1920&q=85"
-            alt="Luxury sports car"
-            fill
-            className="object-cover object-center"
-            priority
-          />
+          <HeroSlider />
           {/* Overlays */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/80" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
@@ -107,7 +102,7 @@ export default function HomePage() {
           {/* Left image */}
           <div className="relative min-h-[50vh] lg:min-h-full">
             <Image
-              src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1200&q=80"
+              src="/images/luxury.jpg"
               alt="Luxury car at sunset"
               fill
               className="object-cover"
@@ -250,7 +245,7 @@ export default function HomePage() {
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1920&q=80"
+            src="/images/hero-3.jpg"
             alt="Luxury car on road"
             fill
             className="object-cover"

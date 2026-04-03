@@ -70,6 +70,14 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
+  /* Solid dark bg + blur for mobile-friendly dropdowns */
+  .glass-dropdown-solid {
+    -webkit-backdrop-filter: blur(40px) saturate(1.4);
+    backdrop-filter: blur(40px) saturate(1.4);
+    background: rgba(10, 10, 10, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
   /* css-compat: vendor-prefixed background-clip for gradient text */
   .gradient-text {
     -webkit-background-clip: text;
