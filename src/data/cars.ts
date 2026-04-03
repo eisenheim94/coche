@@ -31,14 +31,14 @@ export const cars: Car[] = [
       "/images/E36/2.jpg",
       "/images/E36/3.jpg",
     ],
-    specs: { consumption: "10.5 L", transmission: "AT", seats: 4, fuel: "Petrol" },
+    specs: { consumption: "9 L", transmission: "AT", seats: 4, fuel: "Petrol" },
     featured: true,
     description:
       "The BMW E36 Convertible is a timeless open-top classic from the golden era of BMW. With its naturally aspirated inline-six, smooth power delivery, and perfectly balanced chassis, the E36 Cabrio offers a pure driving experience that modern cars struggle to replicate. Drop the top, feel the wind, and enjoy motoring the way it was meant to be.",
   },
   {
     id: 2,
-    name: "Mercedes-Benz ML 350",
+    name: "Mercedes-Benz ML 500",
     category: "SUV",
     year: 2009,
     price: 109,
@@ -52,7 +52,7 @@ export const cars: Car[] = [
     specs: { consumption: "12.0 L", transmission: "AT", seats: 5, fuel: "Petrol" },
     featured: true,
     description:
-      "The Mercedes-Benz ML 350 blends refined luxury with genuine off-road capability. Its silky-smooth V6 engine delivers effortless power, while the air suspension smooths out any road surface. Inside, you'll find the build quality and comfort that Mercedes is famous for — premium leather, solid switchgear, and a cabin that feels built to last forever.",
+      "The Mercedes-Benz ML 500 blends refined luxury with genuine off-road capability. Its silky-smooth V6 engine delivers effortless power, while the air suspension smooths out any road surface. Inside, you'll find the build quality and comfort that Mercedes is famous for — premium leather, solid switchgear, and a cabin that feels built to last forever.",
   },
   {
     id: 3,
@@ -145,7 +145,7 @@ export const cars: Car[] = [
   },
   {
     id: 8,
-    name: "Ford Mustang GT",
+    name: "Ford Mustang",
     category: "Sports",
     year: 2019,
     price: 149,
@@ -157,10 +157,10 @@ export const cars: Car[] = [
       "/images/Mustang/3.jpg",
       "/images/Mustang/4.jpg",
     ],
-    specs: { consumption: "13.5 L", transmission: "AT", seats: 4, fuel: "Petrol" },
+    specs: { consumption: "17 L", transmission: "AT", seats: 4, fuel: "Petrol" },
     featured: false,
     description:
-      "The Ford Mustang GT is an American icon — raw, visceral, and unapologetically powerful. Its naturally aspirated 5.0-litre V8 delivers a thunderous soundtrack and exhilarating straight-line speed. With its aggressive stance, muscular design, and that unmistakable exhaust note, the Mustang GT is a car that makes every drive feel like an event.",
+      "The Ford Mustang is an American icon — raw, visceral, and unapologetically powerful. Its naturally aspirated 5.0-litre V8 delivers a thunderous soundtrack and exhilarating straight-line speed. With its aggressive stance, muscular design, and that unmistakable exhaust note, the Mustang is a car that makes every drive feel like an event.",
   },
 ];
 
