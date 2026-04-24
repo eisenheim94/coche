@@ -28,4 +28,3 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 - **shadcn/ui** components (Button, Card, Badge, Input, Separator)
 - **Lucide React** icons
 - **Framer Motion** for animations
-- **Unsplash** images
