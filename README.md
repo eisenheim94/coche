@@ -1,6 +1,7 @@
 # LUXE DRIVE — Premium Car Rental
 
 A modern, minimalist car rental website built with **Next.js 14**, **shadcn/ui**, **Tailwind CSS**, and **Framer Motion**.
+Fully generated with Claude Code, just for playing with AI-driven development.
 
 ## Quick Start
 
