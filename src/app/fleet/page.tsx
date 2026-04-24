@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Image from "next/image";
-import { Search } from "lucide-react";
+import { ChevronDown, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { CarCard } from "@/components/car-card";
 import { cars, categories } from "@/data/cars";
@@ -63,7 +63,7 @@ export default function FleetPage() {
                   key={cat}
                   onClick={() => setCategory(cat)}
                   className={cn(
-                    "px-5 py-2 text-sm rounded-full transition-all whitespace-nowrap",
+                    "px-5 py-2 text-sm rounded-xl transition-all whitespace-nowrap",
                     category === cat
                       ? "bg-white text-black font-medium"
                       : "text-white/40 hover:text-white hover:bg-white/5"
@@ -79,21 +79,24 @@ export default function FleetPage() {
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
                 <Input
                   placeholder="Search..."
-                  className="pl-9 w-48 bg-white/5 border-white/10 rounded-full text-sm"
+                  className="pl-9 w-48 bg-white/5 border-white/10 rounded-xl text-sm"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                 />
               </div>
-              <select
-                className="h-11 rounded-full bg-white/5 border border-white/10 px-4 text-sm text-white/70 focus:outline-none"
-                value={sort}
-                onChange={(e) => setSort(e.target.value)}
-              >
-                <option value="featured">Featured</option>
-                <option value="price-low">Price ↑</option>
-                <option value="price-high">Price ↓</option>
-                <option value="name">A → Z</option>
-              </select>
+              <div className="relative">
+                <select
+                  className="h-12 appearance-none rounded-xl border border-white/10 bg-white/[0.03] py-2 pl-4 pr-10 text-sm text-white/70 transition-colors focus:border-white/30 focus:outline-none"
+                  value={sort}
+                  onChange={(e) => setSort(e.target.value)}
+                >
+                  <option value="featured">Featured</option>
+                  <option value="price-low">Price ↑</option>
+                  <option value="price-high">Price ↓</option>
+                  <option value="name">A → Z</option>
+                </select>
+                <ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-white/30" />
+              </div>
             </div>
           </div>
 

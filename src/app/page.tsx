@@ -49,7 +49,7 @@ export default function HomePage() {
         <div className="relative z-10 mt-auto pb-8 px-6">
           <div className="max-w-[1440px] mx-auto">
             {/* Headline */}
-            <h1 className="font-display italic font-light text-5xl sm:text-6xl lg:text-7xl text-white tracking-tight mb-8 max-w-3xl">
+            <h1 className="font-display italic font-light text-4xl sm:text-6xl lg:text-7xl text-white tracking-tight mb-8 max-w-3xl">
               Drive in Style, Travel with Confidence
             </h1>
 
